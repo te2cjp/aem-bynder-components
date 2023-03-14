@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "aem-bynder-components/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/aem-bynder-components/clientlibs"/>
+    <filter root="/apps/aem-bynder-components/components"/>
+    <filter root="/apps/aem-bynder-components/i18n"/>
+</workspaceFilter>

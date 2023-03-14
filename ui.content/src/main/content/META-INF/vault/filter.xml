@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/aem-bynder-components" mode="merge"/>
+    <filter root="/content/aem-bynder-components" mode="merge"/>
+    <filter root="/content/dam/aem-bynder-components" mode="merge">
+        <exclude pattern="/content/dam/aem-bynder-components(/.*)?"/>
+        <include pattern="/content/dam/aem-bynder-components/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/aem-bynder-components/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/aem-bynder-components" mode="merge"/>
+</workspaceFilter>

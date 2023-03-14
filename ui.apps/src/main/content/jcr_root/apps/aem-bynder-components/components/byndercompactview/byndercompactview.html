@@ -1,0 +1,74 @@
+<div class="coral-Form-fieldwrapper">
+    <button onclick="openBynderCV();" is="coral-button" title="Open BynderCompactViewer" type="button" aria-label="Open BynderCompactViewer" variant="default" class="_coral-Button _coral-Button--primary" size="M"><coral-icon size="S" class="_coral-Icon--sizeS _coral-Icon" role="img" icon="FolderOpenOutline" aria-hidden="true">
+        <svg focusable="false" aria-hidden="true" class="_coral-Icon--svg _coral-Icon">
+            <use xlink:href="#spectrum-icon-18-FolderOpenOutline"></use>
+        </svg>
+        </coral-icon><coral-button-label class="_coral-Button-label"></coral-button-label>
+    </button>
+    <hr style="opacity:0.0;">
+    <div id="importedAssets"></div>
+        <script src="https://ucv.bynder.com/5.0.5/modules/compactview/bynder-compactview-3-latest.js"></script>
+    <hr style="opacity:0.0;">
+    
+    <script>
+        var bynderURL = document.getElementsByName("./bynderURL")[0].value;
+        if(bynderURL.indexOf(".mp4")>0) {
+          document.getElementById("importedAssets").innerHTML="<video width='100%' src='"+bynderURL+"' controls></video>";
+        }else{
+          document.getElementById("importedAssets").innerHTML="<img width='100%' src='"+bynderURL+"'>";
+        }
+    
+        function openBynderCV () {
+            BynderCompactView.open({
+            language: "en_US",
+            theme: {
+              colorButtonPrimary: "#3380FF"
+            },
+            mode: "SingleSelectFile",
+            onSuccess: function(assets, additionalInfo) {
+              var importedAssetsContainer = document.getElementById(
+                "importedAssets"
+              );
+              importedAssetsContainer.innerHTML = "";
+    
+              var asset = assets[0];
+    
+              console.log("################# ############## #############");
+              console.log(asset, additionalInfo);
+    
+              switch (asset.type) {
+                case "IMAGE":
+                    importedAssetsContainer.innerHTML += additionalInfo.selectedFile.url;
+                    document.getElementsByName("./bynderURL")[0].value = additionalInfo.selectedFile.url;
+                    importedAssetsContainer.innerHTML =
+                      "<img width='100%' src=" + additionalInfo.selectedFile.url + " />";
+                      document.getElementsByName("./label")[0].value = asset.name;
+                      document.getElementsByName("./descr")[0].value = asset.tags.join(", ");
+                  return;
+                case "AUDIO":
+                case "DOCUMENT":
+                  importedAssetsContainer.innerHTML +=
+                    "<img src=" + asset.files.webImage.url + " />";
+                  return;
+                case "VIDEO":
+                    importedAssetsContainer.innerHTML += additionalInfo.selectedFile.url;
+                    document.getElementsByName("./bynderURL")[0].value = additionalInfo.selectedFile.url;
+                    importedAssetsContainer.innerHTML +=
+                      '<video width="100%" muted controls>' +
+                      '<source src="' +
+                      asset.previewUrls[0] +
+                      '" type="video/webm">' +
+                      "</video>";
+                  return;
+                default:
+                  return;
+              }
+            }
+          });
+    
+        } // end OpenCV
+    
+    
+    
+    </script>
+</div>
