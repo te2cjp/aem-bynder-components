@@ -1,4 +1,4 @@
-# Bynder Compact View within AEM Component dialog
+# Bynder Compact View in AEM Component dialog
 
 ![Test Image 1](aem-bynder-component.png)
 
