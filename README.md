@@ -1,4 +1,4 @@
-# How to call Bynder Compact View from AEM
+# Bynder Compact View within AEM Component dialog
 
 ![Test Image 1](aem-bynder-component.png)
 
