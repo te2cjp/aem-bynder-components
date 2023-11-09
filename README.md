@@ -2,9 +2,11 @@
 
 ![Test Image 1](aem-bynder-component.png)
 
+
 ## How to Build
 
 ![howtobuild Image](BynderComponentの使い方1200x4.gif)
+
 
 
 ## How to use
@@ -22,7 +24,10 @@ MapTo('aem-bynder-components/components/bynderimage')(BynderImage, BynderImageEd
 4. Add below into import-components.js under ui.frontend/src/components/
 import './BynderImage/BynderImage';
 
+
 ## Use Compact view from WKND demo site
+
+![CompactView With WKND](CompactviewWithWKND.png)
 
 
 ## Modules
