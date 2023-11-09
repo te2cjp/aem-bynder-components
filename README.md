@@ -2,7 +2,28 @@
 
 ![Test Image 1](aem-bynder-component.png)
 
-## 
+## How to Build
+
+![howtobuild Image](BynderComponentの使い方1200x4.gif)
+
+
+## How to use
+1. Install aem-bynder-components.all-1.0.0-SNAPSHOT.zip via CRX/DE Package Manager
+
+2. Open SPA page template. Edit Policy to use bynder image
+
+3. Create react component in front end env. and MapTo AEM Bynder Component to React Component.
+Sample Code.
+ui.frontend/src/components//BynderImage/BynderImage : 
+// Map BynderImage to AEM component    Left(AEM Bynder COMPONENT, Data ) -- RIGHT(RECT COMPONENT, How to display)
+MapTo('aem-bynder-components/components/bynderimage')(BynderImage, BynderImageEditConfig);
+
+
+4. Add below into import-components.js under ui.frontend/src/components/
+import './BynderImage/BynderImage';
+
+## Use Compact view from WKND demo site
+
 
 ## Modules
 
